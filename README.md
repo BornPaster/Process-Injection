@@ -14,7 +14,7 @@
 **BY USING THIS TOOL YOU AGREE THAT YOU ARE FULLY RESPONSIBLE FOR ANYTHING AND EVERYTHING THAT HAPPENS AND MAY OCCUR WHILE USING THIS APPLICATION.**
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/BornPaster/Process-Injectionk.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=IOTA"/>
+  <img src="https://img.shields.io/github/license/BornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=IOTA"/>
   <img src="https://img.shields.io/github/stars/BornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=IOTA"/>
   <img src="https://img.shields.io/github/languages/topBornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=python"/>
 </p>
