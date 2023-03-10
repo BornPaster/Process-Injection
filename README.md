@@ -16,5 +16,5 @@
 <p align="center">
   <img src="https://img.shields.io/github/license/BornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=IOTA"/>
   <img src="https://img.shields.io/github/stars/BornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=IOTA"/>
-  <img src="https://img.shields.io/github/languages/topBornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=python"/>
+  <img src="https://img.shields.io/github/languages/top/BornPaster/Process-Injection.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=python"/>
 </p>
