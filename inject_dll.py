@@ -1,41 +1,25 @@
 import ctypes
 import sys
+import time
+import os
+from pystyle import *
 
 # Define the DLL code to be injected
 dll_code = """
-#include <Python.h>
-
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved)
-{
-    if (ul_reason_for_call == DLL_PROCESS_ATTACH)
-    {
-        Py_Initialize();
-        PyRun_SimpleString("print('success')");
-        Py_Finalize();
-    }
-    return TRUE;
-}
+DLL CODE HERE
 """
 
-# Compile the code into a DLL file
-import subprocess
-import os
-import platform
-
-dll_file = "success.dll"
-if platform.system() == "Windows":
-    gcc_command = "gcc -shared -o {} -xc -".format(dll_file)
-elif platform.system() == "Linux":
-    gcc_command = "gcc -shared -o {} -x c -".format(dll_file)
-else:
-    raise OSError("Unsupported platform")
-
-subprocess.run(gcc_command, input=dll_code.encode(), check=True, shell=True)
+# Write the code to a file
+with open("injection.dll", "w") as f:
+    f.write(dll_code)
 
 # Get the process ID from the command line argument
 if len(sys.argv) < 2:
-    print("Usage: python inject_dll.py <pid>")
-    sys.exit(1)
+    print(f"{Col.white}[{Col.purple}+{Col.white}] DLL Being Built..")
+    time.sleep(2)
+    print(f"{Col.white}[{Col.purple}+{Col.white}] DLL File Successfuly Built.")
+    print(f"{Col.white}[{Col.purple}+{Col.white}] In Order To Use: python inject_dll.py <pid>")
+    input()
 pid = int(sys.argv[1])
 
 # Open the target process
@@ -46,7 +30,7 @@ process_handle = ctypes.windll.kernel32.OpenProcess(
 )
 
 # Allocate memory for the DLL path in the target process
-dll_path = ctypes.c_char_p(os.path.abspath(dll_file).encode("utf-8"))
+dll_path = ctypes.c_char_p("injection.dll".encode("utf-8"))
 dll_path_size = ctypes.c_size_t(len(dll_path.value) + 1)
 remote_dll_path = ctypes.windll.kernel32.VirtualAllocEx(
     process_handle,
